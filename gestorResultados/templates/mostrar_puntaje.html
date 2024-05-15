@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Puntaje Final{% endblock titulo %}
+
+{% block login %}
+<h1>{{categoria}}</h1>
+<br>
+<div class="info">
+    <label ><span>Grado: </span>{{grado}}</label>
+    <label ><span>Sección: </span>{{seccion}}</label>
+</div>
+<br>
+{% with suma_calificaciones=calif01.0.calificacion|add:calif02.0.calificacion|add:calif03.0.calificacion %}
+    <div class="calificaciones">
+        <label>{{ calif01.0.calificacion }}</label>
+        <label>{{ calif02.0.calificacion }}</label>
+        <label>{{ calif03.0.calificacion }}</label>
+
+        <span>Jurado 01</span>
+        <span>Jurado 02</span>
+        <span>Jurado 03</span>
+    </div>
+    <br>
+    <br>
+    <label class="sumatoria">SUMATORIA: <span>{{ suma_calificaciones }}</span></label>
+    <br>
+    <a href="/"><button class="btn">Salir</button></a>
+{% endwith %}
+
+{% endblock login %}

@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Calificación PlayBack{% endblock titulo %}
+
+{% block login %}
+
+
+    <form action="" method="post">
+        {% csrf_token %}
+        <h1>Calificación Play Back</h1>
+        <div class="selector">
+            <label>Grado: </label>
+            <select name="grado" id="">
+                <option value="">---------</option>
+                <option value="PRIMERO">PRIMERO</option>
+                <option value="SEGUNDO">SEGUNDO</option>
+                <option value="TERCERO">TERCERO</option>
+                <option value="CUARTO">CUARTO</option>
+                <option value="QUINTO">QUINTO</option>
+            </select>
+            <label>Sección: </label>
+            <select name="seccion" id="">
+                <option value="">-----</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="E">E</option>
+                <option value="F">F</option>
+                <option value="G">G</option>
+            </select>
+            <label>Jurado: </label>
+            <select name="jurado" id="">
+                <option value="">--------</option>
+                <option value="jurado 1">Jurado 1</option>
+                <option value="jurado 2">Jurado 2</option>
+                <option value="jurado 3">Jurado 3</option>
+            </select>
+        </div>
+
+        <div class="input-box">
+            <label>SINCRONIZACIÓN Y CREATIVIDAD: </label>
+            <input type="text" name="crit01" placeholder="MAX 10 PUNTOS" autocomplete="off">
+        </div>
+        <div class="input-box">
+            <label>VESTUARIO: </label>
+            <input type="text" name="crit02" placeholder="MAX 10 PUNTOS" autocomplete="off">
+        </div>
+        <div class="input-box">
+            <label>DOMINIO ESCÉNICO: </label>
+            <input type="text" name="crit03" placeholder="MAX 10 PUNTOS" autocomplete="off">
+        </div>
+        <div class="input-box">
+            <label>ACOMPAÑAMIENTO: </label>
+            <input type="text" name="crit04" placeholder="MAX 10 PUNTOS" autocomplete="off">
+        </div>
+        <div class="input-box">
+            <label>MENSAJE: </label>
+            <input type="text" name="crit05" placeholder="MAX 10 PUNTOS" autocomplete="off">
+        </div>
+        <div class="input-box">
+            <label>TUTOR Y/O CO-TUTOR: </label>
+            <input type="text" name="crit06" placeholder="MAX 20 PUNTOS" autocomplete="off">
+        </div>
+        <button type="submit" class="btn">ENVIAR</button>
+    </form>
+    <a href="/"><button class="btn">VOLVER</button></a>
+
+
+{% endblock login %}
